@@ -1,0 +1,30 @@
+######################################
+## DESCRIPCIÓN GENERAL DEL DESARROLLO 
+###################################### 
+
+Este sistema se basa en un Core desarrollado por Carlos H. González N., y fusiona la implementación del 
+paradigma de la POO (Programación Orientada a Objetos) y el Patrón MVC (Modelo-Vista-Controlador), generando
+una clara separación entre interfaz, lógica de negocio y de presentación. Siendo modificable y adaptable a 
+muchos tipo de desarrollos, ofreciendo ventajas cómo:
+* Crear distintas representaciones de los mismos datos de manera sencilla.
+* Facilidad en el desarrollo guiado por pruebas (TDD).
+* Los sistemas resultantes son más escalables.
+* Reutilización de los componentes, ya que cada módulo puede ser readaptado al proceso necesitado.
+* En sistemas basados en modelos CRUD se facita el desarrollar prototipos rápidos.
+* Simplicidad en el mantenimiento del sistema.
+
+Igualmente tienen controlado el acceso a las páginas de la aplicación a través de un controlador de Rutas. Cada 
+archivo tiene una cadena de llamado, haciendo que siempre se esté trabajando sobre el archivo index.php de la 
+carpeta raíz, y en cierta forma se facilita la implementación para un modelo Single Page Application (SPA).
+
+Para el caso de este sistema, se tiene el archivo views/formulario.html cómo el único archivo del front-end y
+la manipulación de los registros que van o vienen de la base de datos se efectúan a través de Jquery debido a
+la sencillo de su implementación, pero igualmente puede ser readaptado a frameworks cómo VUEjs o Reactjs.
+
+* En el Backend, todos los procesos se efectúan en un sólo archivo, bin/process_election.php, en este archivo se
+encuentran las consultas, validaciones y todo lo relacionado al CRUD del sistema.
+
+* El archivo 'bin/process_election.php' se enlaza con la clase 'controllerElections' del archivo 'methods/Controller.php'
+  donde encuentran los Controladores que ejecutarán las llamadas a las funciones de los modelos, los cuales están 
+  ubicados dentro de la clase 'Elections' del archivo 'class/Elections.class.php', imprescidibles para la interacción
+  con la base de datos.

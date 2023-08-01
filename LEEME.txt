@@ -1,0 +1,31 @@
+Formulario de Registro de Votaciones:
+
+En este archivo se explica como ejecutar el Sistema de Registro de Votaciones según las especificaciones 
+dada por la empresa Desis. El equipo/servidor donde se instale el sistema debe contar con:
+  1. Servidor Apache/NginX/IIS o similar para poder ejecutar archivos PHP.
+  2. Administrador de MySQL corriendo.
+  3. El sistema fue desarrollado usando PHP Version 8.0.28, puede ejecutarse usando PHP Versión 5.0 en adelante.
+  4. La base de datos fue creada MariaDB 11.0.2 con soporte para PDO mysqlnd 8.0.28. Puede ejecutarse usando 
+     MariaDB 10.4 LTS o MySQL 5.7 en adelante.
+
+###########################################################################################
+# 1. Instalacion del Sistema
+#==========================================================================================
+a) Descargar el paquete nativo de github de la dirección: https://github.com/CarlosHGN/votaciones/.
+b) Copiar los archivo en la carpeta configurada para la ejecución de archivos PHP según el servir disponible.
+   Ejemplo: /var/www/[carpeta de instalación] o similar (Caso Linux con privilegios root).
+c) Abrir config/Config.php, y en la línea:
+   define('WEBSITEPATH', 'http://localhost/votaciones/'); //Website Address
+   ,camnbiar la dirección según el nombre que se le haya dado a la carpeta que contenga los archivos.
+d) Abrir config/keys.php, y ajustar el nombre de la Base de Datos, Usuario y clave según el caso. El sistema por
+   parámetro básico instalará la base de datos "db_votaciones". Se recomienda dejar el nombre original.
+e) Relacionado al punto anterior, en caso de que se quiera cambiar el nombre de la base de datos, se
+   debe abrir el archivo SQL/db_votaciones.sql y sustituir la palabra "db_votaciones" por el nombre deseado e
+   instalarlo directamente en el Administrador de la base de datos.
+f) Se destaca que, en caso de dejar el nombre de la DB original, el sistema crea automáticamente la base de datos, 
+   y no es necesario entrar al Administrador de MySQL o MariaDB para hacerlo. Sólo se requiere ejecutarlo por 
+   primera vez y se mostrará un mensaje indicando la creación de la nueva base de datos.
+
+La instalacion de este paquete crea una aplicacion web y la levanta en: http://localhost/[carpeta de instalación]
+
+
